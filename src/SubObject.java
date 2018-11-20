@@ -1,4 +1,6 @@
-public class SubObject implements Cloneable {
+import java.io.Serializable;
+
+public class SubObject implements Cloneable, Serializable {
     private String name;
     private String title;
 

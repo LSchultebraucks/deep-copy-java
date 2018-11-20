@@ -1,4 +1,6 @@
-public class TopObject implements Cloneable {
+import java.io.Serializable;
+
+public class TopObject implements Cloneable, Serializable {
     private SubObject subObject;
 
     TopObject(SubObject subObject) {
@@ -24,7 +26,7 @@ public class TopObject implements Cloneable {
 
 
     @Override
-    protected TopObject clone()  {
+    protected TopObject clone() {
         TopObject topObject = null;
         try {
             topObject = (TopObject) super.clone();
