@@ -1,4 +1,4 @@
-public class SubObject {
+public class SubObject implements Cloneable {
     private String name;
     private String title;
 
@@ -30,5 +30,14 @@ public class SubObject {
     @Override
     public String toString() {
         return "My name is " + name + " and I have the title " + title + ".";
+    }
+
+    @Override
+    public SubObject clone() {
+        try {
+            return (SubObject) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return new SubObject(this.name, this.title);
+        }
     }
 }
